@@ -3,6 +3,8 @@
 #include <stdexcept>
 using namespace std;
 
+namespace {
+
 bool is_op(char c) {
 	return c == '&' || c == '|' || c == '!';
 }
@@ -46,6 +48,8 @@ string read_var(string_view s) {
         ++len;
     return string(s.substr(0, len));
 }
+
+} // namespace
 
 CommonAST parse(std::string_view formula) {
     CommonAST ast;
