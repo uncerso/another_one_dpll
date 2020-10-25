@@ -1,5 +1,4 @@
 #include "cnf_maker.hpp"
-#include <iostream>
 using namespace std;
 
 CNF CNFMaker::make_CNF(CommonAST const & ast) {

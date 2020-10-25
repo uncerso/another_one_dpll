@@ -1,0 +1,9 @@
+#!/bin/sh
+while IFS= read -r line; do
+    echo "$line"
+    if [ "$(./run <<< "$line")" != "UNSAT" ]; then
+        echo "    failed :("
+    else
+        echo "    ok"
+    fi
+done < unsat_tests

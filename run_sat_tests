@@ -1,0 +1,10 @@
+while IFS= read -r line; do
+    echo "$line"
+    result="$(./run <<< "$line")"
+    ret_code=$?
+    if [ "$ret_code" = "0" ] && [ "$result" != "UNSAT" ]; then
+        echo "    ok"
+    else
+        echo "    failed :("
+    fi
+done < sat_tests

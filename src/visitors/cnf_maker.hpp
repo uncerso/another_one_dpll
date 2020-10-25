@@ -10,9 +10,9 @@ public:
     void visit(Or&)  override;
     void visit(And&) override;
     CNF make_CNF(CommonAST const & ast);
+    size_t get_total_vars_in_cnf() const noexcept { return next_free_id; }
 private:
     CNF cnf;
-    CommonAST * ast;
 
     struct {
         size_t id;
@@ -21,5 +21,5 @@ private:
         std::pair<size_t, bool> to_neg_pair() const noexcept { return {id, !is_neg}; }
     } ret_literal;
 
-    size_t next_free_id;
+    size_t next_free_id = 0;
 };
