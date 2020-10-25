@@ -17,10 +17,10 @@
 More examples you can see in the <code>sat_tests</code> and <code>unsat_tests</code> files
 
 # Operations and priorities
-logic 'not' is <code>!</code>
+logical 'not' is <code>!</code>
 
-logic 'and' is <code>&</code>
+logical 'and' is <code>&</code>
 
-logic 'or' is <code>|</code>
+logical 'or' is <code>|</code>
 
 priority(<code>!</code>) > priority(<code>&</code>) > priority(<code>|</code>)
